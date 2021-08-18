@@ -20,8 +20,8 @@ Plug 'voldikss/vim-floaterm'
 
 if !exists('g:vscode')
 
-  Plug 'wakatime/vim-wakatime'
-  let g:wakatime_PythonBinary = '/usr/bin/python3'
+  " Plug 'wakatime/vim-wakatime'
+  " let g:wakatime_PythonBinary = '/usr/bin/python3'
 
   Plug 'jiangmiao/auto-pairs'
   Plug 'kkoomen/vim-doge', { 'on': ['DogeGenerate', 'DogeCreateDocStandard'] } " document genertor

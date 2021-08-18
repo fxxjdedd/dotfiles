@@ -1,10 +1,10 @@
 [user]
-	name = Innei
-	email = tukon479@gmail.com
+	name = futengda
+	email = futengda.ftd@alibaba-inc.com
 [https]
-	proxy = socks5://127.0.0.1:1080
+#	proxy = socks5://127.0.0.1:13659
 [http]
-	proxy = socks5://127.0.0.1:1080
+#	proxy = socks5://127.0.0.1:13659
 [alias]
 	sa = status
 	go = checkout
@@ -17,12 +17,10 @@
 	s = status
 
 [commit]
-	gpgsign = true
 [core]
 	autocrlf = input
 	excludesfile = ~/.gitignore
 [gpg]
-	program = /usr/local/bin/gpg
 [merge]
 	tool = vimdiff
 

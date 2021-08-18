@@ -33,35 +33,30 @@ else
 endif
 
 
+    " \ 'coc-marketplace',
+    " \ 'coc-post',
+    " \ 'coc-postfix',
+    " \ 'coc-spell-checker',
+    " \ 'coc-translator',
+    " \ 'coc-git',
 let g:coc_global_extensions = [
     \ 'coc-actions',
     \ 'coc-calc',
     \ 'coc-css',
     \ 'coc-cssmodules',
     \ 'coc-eslint',
-    \ 'coc-explorer',
-    \ 'coc-git',
     \ 'coc-gitignore',
-    \ 'coc-go',
     \ 'coc-highlight',
     \ 'coc-html',
     \ 'coc-imselect',
     \ 'coc-json',
     \ 'coc-lists',
-    \ 'coc-marketplace',
-    \ 'coc-post',
-    \ 'coc-postfix',
     \ 'coc-prettier',
-    \ 'coc-pyright',
-    \ 'coc-python',
     \ 'coc-smartf',
     \ 'coc-snippets',
-    \ 'coc-spell-checker',
     \ 'coc-stylelint',
     \ 'coc-tailwindcss',
     \ 'coc-todolist',
-    \ 'coc-translator',
-    \ 'coc-tslint',
     \ 'coc-tsserver',
     \ 'coc-vimlsp',
     \ 'coc-yank',
@@ -83,7 +78,7 @@ function! s:check_back_space() abort
 endfunction
 
 let g:coc_snippet_next = '<tab>'
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+" nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -97,7 +92,12 @@ inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <silent><expr> ,. coc#refresh()
 " Open up coc-commands
 nnoremap <c-c> :CocList diagnostics<CR>
-nnoremap <leader>l :CocList<CR>
+
+" 我自己写的
+nnoremap <leader>L :CocList<CR>
+nnoremap <leader>p :Files<CR>
+nnoremap <leader>P :Format<CR>
+
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
 xmap if <Plug>(coc-funcobj-i)
@@ -147,10 +147,10 @@ command! -nargs=0 R             CocRestart
 command! -nargs=0 L             CocListResume
 command! -nargs=0 -range D      CocCommand
 
-nmap <silent> <TAB> <Plug>(coc-range-select)
-xmap <silent> <TAB> <Plug>(coc-range-select)
+" nmap <silent> <TAB> <Plug>(coc-range-select)
+" xmap <silent> <TAB> <Plug>(coc-range-select)
 
-xmap <leader>f  <Plug>(coc-format-selected)
+" xmap <leader>f  <Plug>(coc-format-selected)
 
 nmap <leader>o <Plug>(coc-openlink)
 nmap <leader>a <Plug>(coc-refactor)
@@ -159,7 +159,6 @@ nmap <leader>a <Plug>(coc-refactor)
 autocmd FileType javascript,javascriptreact,typescript,typescriptreact,scss let b:coc_root_patterns = ['node_modules']
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
-nnoremap <leader>p :Format<CR>
 
 " coc-smartf
 nmap f <Plug>(coc-smartf-forward)

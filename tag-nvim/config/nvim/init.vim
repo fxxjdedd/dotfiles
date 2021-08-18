@@ -31,6 +31,9 @@ if has('nvim')
   exec 'source ' . s:script_path . '/viml/neovim.vim'
 endif
 
+set lazyredraw
+set ttyfast
+
 " Free memory
 unlet s:script_path
 unlet s:sourceList
