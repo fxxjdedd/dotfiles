@@ -67,10 +67,10 @@ noremap B 5b
 " === Window management
 " ===
 " Use <space> + new arrow keys for moving the cursor around windows
-noremap <LEADER>w <C-w>w
+noremap <LEADER>w <C-w>w "window
 noremap <LEADER>k <C-w>k
-noremap <LEADER>j <C-w>j
-noremap <LEADER>h <C-w>h
+noremap <LEADER>j <C-w>j "控制台
+noremap <LEADER>h <C-w>h "侧边栏
 noremap <LEADER>l <C-w>l
 noremap qf <C-w>o
 
@@ -140,13 +140,17 @@ noremap <LEADER>sw :set wrap<CR>
 " close terminal
 tnoremap <Esc><Esc> <C-\><C-n>:q!<CR>
 
-
 " https://vi.stackexchange.com/questions/19276/how-to-keep-the-neovim-terminal-buffer-in-the-buffer-list-even-after-it-being-hi
-augroup custom_term
-    autocmd!
-    autocmd TermOpen * setlocal bufhidden=hide
-augroup END
+"augroup custom_term
+"    autocmd!
+"    autocmd TermOpen * setlocal bufhidden=hide
+"augroup END
 
+noremap <LEADER><LEADER> vaw
+noremap <LEADER>w vaw
+
+"快速来到括号、引号等符号的后面继续书写
+imap <C-c> <Esc>la
 
 " Remember
 " 快速注释 <LEADER>/
@@ -154,4 +158,3 @@ augroup END
 " 临时退出vim再回来 Ctrl+Z 然后 fg
 " 切换回刚才的window <LEADER>w
 " coc相关的在viml/plugins.config/coc.nvim.vim
-
